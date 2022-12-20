@@ -9,6 +9,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,6 +34,16 @@ p {
 .header {
   height: 90px;
   border: 1px solid #ffffff1a;
+}
+
+.header.header__scroll {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 99999;
+  background-color: $bg;
+  animation: fadeInHeader 1s ease-out forwards;
 }
 
 .header__content {
@@ -85,7 +96,7 @@ p {
           bottom: 2px;
           right: 0;
           width: 0;
-          height: 3px;
+          height: 4px;
           background-color: $blue;
           display: inline-block;
           transition: width 0.5s ease;
@@ -100,6 +111,11 @@ p {
           visibility: visible;
           opacity: 1;
           transform: scale(1);
+        }
+        &.active::after {
+          left: 0;
+          width: 100%;
+          transition: width 0.5s ease;
         }
 
         &__menu {
@@ -545,19 +561,19 @@ p {
         left: auto;
         right: -2%;
         top: auto;
-        bottom: 12%;
-
+        bottom: 20%;
+        animation: UpToDown 5s linear infinite;
         @include tablet {
           top: 2%;
           left: -3%;
           bottom: auto;
           right: auto;
+          animation: LeftToRight 5s linear infinite;
         }
 
         @include subMobile {
           width: 10rem;
         }
-        animation: LeftToRight 5s linear infinite;
       }
     }
   }
@@ -817,6 +833,9 @@ p {
       width: 50%;
       display: flex;
       justify-content: flex-end;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100px);
 
       @include tablet {
         width: 100%;
@@ -847,6 +866,9 @@ p {
     &__content {
       width: 50%;
       margin-left: 55px;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(100px);
       @include tablet {
         width: 100%;
       }
@@ -935,25 +957,47 @@ p {
         color: $blue;
       }
     }
+
+    &__wrap {
+      width: 100%;
+      overflow: auto;
+      margin-top: 4rem;
+      cursor: pointer;
+      scroll-behavior: smooth;
+      scroll-snap-type: both;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
     &__list {
       @include flex(center, center);
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
+      width: max-content;
       margin-top: 2rem;
     }
     &__item {
       padding: 5rem 3.5rem;
       border: 1px solid $boder-color;
-      width: calc(25% - 1rem);
+      width: 305px;
       border-radius: 1.5rem;
       margin-bottom: 2rem;
       margin-right: 1rem;
       cursor: pointer;
+      min-height: 342px;
+      scroll-snap-align: start;
+
+      @media only screen and (min-width: 1250px) {
+        width: 305px;
+      }
 
       @include tablet {
-        width: calc(50% - 1rem);
+        width: 350px;
       }
-      @include tablet {
-        width: 100%;
+      @include mobile {
+        margin: 16px;
+        width: 510px;
+        @include flexColumn(flex-start, center);
       }
 
       &:hover &-icon {
@@ -1040,6 +1084,9 @@ p {
 
     &__info {
       width: 50%;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100px);
 
       @include tablet {
         width: 100%;
@@ -1112,6 +1159,9 @@ p {
       padding: 60px 30px 60px;
       background-color: #0b1d33;
       border-radius: 20px;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(100px);
       @include flexColumn(center, center);
 
       @include tablet {
@@ -1219,7 +1269,7 @@ p {
   position: relative;
   // background-image: url("../img/banner_bg.jpg");
   height: 100%;
-  z-index: -2;
+  z-index: 0;
 
   &::after {
     content: "";
@@ -1228,7 +1278,7 @@ p {
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -2;
     background: linear-gradient(360deg, #0b1d33 0%, rgba(11, 29, 51, 0) 97.51%);
     transform: matrix(1, 0, 0, -1, 0, 0);
     opacity: 0.8;
@@ -1282,11 +1332,16 @@ p {
 
   &__list {
     display: flex;
-    width: 100%;
+    width: 1571px;
     min-height: 490px;
 
     &__wrap {
-      width: 1571px;
+      width: 100%;
+      overflow: auto;
+      cursor: pointer;
+      &::-webkit-scrollbar {
+        display: none;
+      }
     }
 
     &__item {
@@ -1466,6 +1521,9 @@ p {
 
     &-img {
       width: 58%;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(50px);
 
       @include tablet {
         margin: 3rem auto 0;
@@ -1482,6 +1540,9 @@ p {
     &-info {
       width: 42%;
       margin-top: 8rem;
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(100px);
       @include tablet {
         margin: auto;
       }
@@ -1939,6 +2000,10 @@ footer {
         }
 
         &:nth-child(1) {
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(100px);
+          transition: all 0.5s linear 0.4s;
           @include tablet {
             width: 50%;
           }
@@ -1997,6 +2062,10 @@ footer {
 
         &:nth-child(2) {
           @include flexColumn(center, center);
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(100px);
+          transition: all 0.5s linear 0.6s;
           @include tablet {
             width: 50%;
           }
@@ -2012,6 +2081,10 @@ footer {
 
         &:nth-child(3) {
           width: 16.67%;
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(100px);
+          transition: all 0.5s linear 0.8s;
           @include tablet {
             width: 50%;
           }
@@ -2024,6 +2097,10 @@ footer {
         }
         &:nth-child(4) {
           width: 33.33%;
+          visibility: hidden;
+          opacity: 0;
+          transform: translateY(100px);
+          transition: all 0.5s linear 1s;
           @include tablet {
             width: 50%;
           }

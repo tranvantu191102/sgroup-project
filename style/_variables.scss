@@ -42,3 +42,23 @@ $green: #5dd400;
     transform: rotate(180deg);
   }
 }
+
+@keyframes fadeInHeader {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.show__effect {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+  visibility: visible !important;
+  transition: all 0.4s linear;
+}

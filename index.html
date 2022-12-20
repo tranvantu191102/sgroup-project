@@ -35,7 +35,7 @@
           <div class="header__content__navbar">
             <ul class="navigation">
               <li class="navigation__item">
-                <a href="/">HOME</a>
+                <a href="#">HOME</a>
                 <ul class="navigation__item__menu">
                   <li>
                     <a href="/">home one</a>
@@ -46,12 +46,12 @@
                 </ul>
               </li>
               <li class="navigation__item">
-                <a href="/">ABOUT US</a>
+                <a href="#about">ABOUT US</a>
               </li>
-              <li class="navigation__item"><a href="/">SALES</a></li>
-              <li class="navigation__item"><a href="/">ROADMAP</a></li>
+              <li class="navigation__item"><a href="#sales">SALES</a></li>
+              <li class="navigation__item"><a href="#roadmap">ROADMAP</a></li>
               <li class="navigation__item">
-                <a href="/">BLOG</a>
+                <a href="#">BLOG</a>
                 <ul class="navigation__item__menu">
                   <li>
                     <a href="/">our blog</a>
@@ -61,7 +61,9 @@
                   </li>
                 </ul>
               </li>
-              <li class="navigation__item"><a href="/">CONTACT US</a></li>
+              <li class="navigation__item">
+                <a href="#contact">CONTACT US</a>
+              </li>
             </ul>
           </div>
           <div class="header__content__action">
@@ -151,7 +153,7 @@
       <div class="mobile__menu__bg"></div>
     </header>
     <div class="main">
-      <section class="banner-wrap" id="banner">
+      <section class="banner-wrap section__id" id="banner ">
         <div class="container banner">
           <div class="banner__content">
             <div class="banner__content__up">
@@ -206,14 +208,14 @@
           </div>
         </div>
       </section>
-      <section id="about">
+      <section id="about" class="section__id">
         <div class="container about">
           <div class="about__who-we-are">
-            <div class="about__who-we-are__img">
+            <div class="about__who-we-are__img hide__effect">
               <img src="./img/about_img01.png" alt="" />
               <img src="./img/about_img02.png" alt="" />
             </div>
-            <div class="about__who-we-are__content">
+            <div class="about__who-we-are__content hide__effect">
               <span class="about__sub-title">WHO WE ARE</span>
               <h2 class="title">
                 The World’s <span>1st ICO</span> <br />
@@ -268,71 +270,104 @@
               Why Choose Our Bigtech <br />
               <span>Token</span>
             </h2>
-            <div class="about__why-choose-us__list">
-              <div class="about__why-choose-us__item">
-                <div class="about__why-choose-us__item-icon">
-                  <img src="./img/choose_icon01.svg" alt="" />
+            <div class="about__why-choose-us__wrap">
+              <div class="about__why-choose-us__list">
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon01.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">Mobile payment make easy</h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-                <div class="about__why-choose-us__item-content">
-                  <h2 class="title">Mobile payment make easy</h2>
-                  <p>Add new, trending and rare artwork to your collection.</p>
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon02.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">Lifetime free transaction</h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="about__why-choose-us__item">
-                <div class="about__why-choose-us__item-icon">
-                  <img src="./img/choose_icon02.svg" alt="" />
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon03.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">
+                      Protect the <br />
+                      identity
+                    </h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-                <div class="about__why-choose-us__item-content">
-                  <h2 class="title">
-                    Lifetime free <br />
-                    transaction
-                  </h2>
-                  <p>Add new, trending and rare artwork to your collection.</p>
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon04.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">Sercurity & control over money</h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="about__why-choose-us__item">
-                <div class="about__why-choose-us__item-icon">
-                  <img src="./img/choose_icon03.svg" alt="" />
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon02.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">
+                      Protect the <br />
+                      identity
+                    </h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-                <div class="about__why-choose-us__item-content">
-                  <h2 class="title">
-                    Protect the <br />
-                    identity
-                  </h2>
-                  <p>Add new, trending and rare artwork to your collection.</p>
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon01.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">
+                      Protect the <br />
+                      identity
+                    </h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div class="about__why-choose-us__item">
-                <div class="about__why-choose-us__item-icon">
-                  <img src="./img/choose_icon04.svg" alt="" />
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon01.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">Mobile payment make easy</h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
-                <div class="about__why-choose-us__item-content">
-                  <h2 class="title">Sercurity & control over money</h2>
-                  <p>Add new, trending and rare artwork to your collection.</p>
-                </div>
-              </div>
-              <div class="about__why-choose-us__item">
-                <div class="about__why-choose-us__item-icon">
-                  <img src="./img/choose_icon02.svg" alt="" />
-                </div>
-                <div class="about__why-choose-us__item-content">
-                  <h2 class="title">
-                    Protect the <br />
-                    identity
-                  </h2>
-                  <p>Add new, trending and rare artwork to your collection.</p>
-                </div>
-              </div>
-              <div class="about__why-choose-us__item">
-                <div class="about__why-choose-us__item-icon">
-                  <img src="./img/choose_icon01.svg" alt="" />
-                </div>
-                <div class="about__why-choose-us__item-content">
-                  <h2 class="title">
-                    Protect the <br />
-                    identity
-                  </h2>
-                  <p>Add new, trending and rare artwork to your collection.</p>
+                <div class="about__why-choose-us__item">
+                  <div class="about__why-choose-us__item-icon">
+                    <img src="./img/choose_icon02.svg" alt="" />
+                  </div>
+                  <div class="about__why-choose-us__item-content">
+                    <h2 class="title">Lifetime free transaction</h2>
+                    <p>
+                      Add new, trending and rare artwork to your collection.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -342,10 +377,10 @@
           </div>
         </div>
       </section>
-      <section id="sales">
+      <section id="sales" class="section__id">
         <div class="container sales">
           <div class="sales__content">
-            <div class="sales__content__info">
+            <div class="sales__content__info hide__effect">
               <div class="info-wrap">
                 <div class="sales__content__info__nav">
                   <button class="funding">FUNDING ALLOCATION</button>
@@ -362,7 +397,7 @@
                 <button class="btn btn-buy-token">buy now</button>
               </div>
             </div>
-            <div class="sales__content__chart">
+            <div class="sales__content__chart hide__effect">
               <img src="./img/chart.png" alt="" />
               <ul class="sales__content__chart__list">
                 <li>Contingency: 70%</li>
@@ -380,7 +415,7 @@
         </div>
       </section>
       <div class="area-bg">
-        <section id="roadmap">
+        <section id="roadmap" class="section__id">
           <div class="container roadmap">
             <div class="roadmap__title">
               <span class="about__sub-title">OUR ROADMAP</span>
@@ -486,10 +521,10 @@
         <section id="document-area">
           <div class="container document-area">
             <div class="document-area__content">
-              <div class="document-area__content-img">
+              <div class="document-area__content-img hide__effect">
                 <img src="./img/document_img.png" alt="" />
               </div>
-              <div class="document-area__content-info">
+              <div class="document-area__content-info hide__effect">
                 <span class="about__sub-title"> WHITEPAPER</span>
                 <h2 class="title">Read Bigtech <span>Documents</span></h2>
                 <ul>
@@ -504,7 +539,7 @@
           </div>
         </section>
       </div>
-      <section id="team-area">
+      <section id="team-area" class="section__id">
         <div class="container team-area">
           <div class="team-area__title">
             <span class="about__sub-title"> OUR TEAM</span>
@@ -618,7 +653,7 @@
           </ul>
         </div>
       </section>
-      <section id="contact">
+      <section id="contact" class="section__id">
         <div class="container contact">
           <div class="team-area__title">
             <span class="about__sub-title">CONTACT</span>
@@ -677,7 +712,7 @@
         </div>
         <div class="footer__top">
           <div class="footer__top__list">
-            <div class="footer__top__list__item">
+            <div class="footer__top__list__item hide__effect">
               <img src="./img/logo.png" alt="" />
               <p>
                 A new way to make the payments easy, reliable and 100% secure.
@@ -690,7 +725,7 @@
                 <li><i class="fa-brands fa-skype"></i></li>
               </ul>
             </div>
-            <div class="footer__top__list__item">
+            <div class="footer__top__list__item hide__effect">
               <h4>USEFUL LINKS</h4>
               <ul class="list">
                 <li>Contact us</li>
@@ -700,7 +735,7 @@
                 <li>Terms & Services</li>
               </ul>
             </div>
-            <div class="footer__top__list__item">
+            <div class="footer__top__list__item hide__effect">
               <h4>COMMUNITY</h4>
               <ul class="list">
                 <li>Help Center</li>
@@ -710,7 +745,7 @@
                 <li>Newsletters</li>
               </ul>
             </div>
-            <div class="footer__top__list__item">
+            <div class="footer__top__list__item hide__effect">
               <h4>SUBSCRIBE NEWSLETTER</h4>
               <p>
                 Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea

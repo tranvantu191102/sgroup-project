@@ -28,6 +28,25 @@
     transform: rotate(180deg);
   }
 }
+@keyframes fadeInHeader {
+  from {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-45px);
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.show__effect {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+  visibility: visible !important;
+  transition: all 0.4s linear;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -36,6 +55,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -59,6 +79,16 @@ p {
 .header {
   height: 90px;
   border: 1px solid rgba(255, 255, 255, 0.1019607843);
+}
+
+.header.header__scroll {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 99999;
+  background-color: #030b15;
+  animation: fadeInHeader 1s ease-out forwards;
 }
 
 .header__content {
@@ -116,7 +146,7 @@ p {
   bottom: 2px;
   right: 0;
   width: 0;
-  height: 3px;
+  height: 4px;
   background-color: #00c4f4;
   display: inline-block;
   transition: width 0.5s ease;
@@ -130,6 +160,11 @@ p {
   visibility: visible;
   opacity: 1;
   transform: scale(1);
+}
+.header__content__navbar .navigation__item.active::after {
+  left: 0;
+  width: 100%;
+  transition: width 0.5s ease;
 }
 .header__content__navbar .navigation__item__menu {
   position: absolute;
@@ -545,8 +580,8 @@ p {
   left: auto;
   right: -2%;
   top: auto;
-  bottom: 12%;
-  animation: LeftToRight 5s linear infinite;
+  bottom: 20%;
+  animation: UpToDown 5s linear infinite;
 }
 @media only screen and (max-width: 992px) {
   .banner__shape > img:nth-child(3) {
@@ -554,6 +589,7 @@ p {
     left: -3%;
     bottom: auto;
     right: auto;
+    animation: LeftToRight 5s linear infinite;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -810,6 +846,9 @@ p {
   width: 50%;
   display: flex;
   justify-content: flex-end;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 @media only screen and (max-width: 992px) {
   .about__who-we-are__img {
@@ -838,6 +877,9 @@ p {
 .about__who-we-are__content {
   width: 50%;
   margin-left: 55px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100px);
 }
 @media only screen and (max-width: 992px) {
   .about__who-we-are__content {
@@ -933,30 +975,53 @@ p {
 .about__why-choose-us > .title > span {
   color: #00c4f4;
 }
+.about__why-choose-us__wrap {
+  width: 100%;
+  overflow: auto;
+  margin-top: 4rem;
+  cursor: pointer;
+  scroll-behavior: smooth;
+  scroll-snap-type: both;
+}
+.about__why-choose-us__wrap::-webkit-scrollbar {
+  display: none;
+}
 .about__why-choose-us__list {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  width: max-content;
   margin-top: 2rem;
 }
 .about__why-choose-us__item {
   padding: 5rem 3.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1019607843);
-  width: calc(25% - 1rem);
+  width: 305px;
   border-radius: 1.5rem;
   margin-bottom: 2rem;
   margin-right: 1rem;
   cursor: pointer;
+  min-height: 342px;
+  scroll-snap-align: start;
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (min-width: 1250px) {
   .about__why-choose-us__item {
-    width: calc(50% - 1rem);
+    width: 305px;
   }
 }
 @media only screen and (max-width: 992px) {
   .about__why-choose-us__item {
-    width: 100%;
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .about__why-choose-us__item {
+    margin: 16px;
+    width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
 }
 .about__why-choose-us__item:hover .about__why-choose-us__item-icon {
@@ -1035,6 +1100,9 @@ p {
 }
 .sales__content__info {
   width: 50%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(-100px);
 }
 @media only screen and (max-width: 992px) {
   .sales__content__info {
@@ -1108,6 +1176,9 @@ p {
   padding: 60px 30px 60px;
   background-color: #0b1d33;
   border-radius: 20px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1213,7 +1284,7 @@ p {
 #roadmap {
   position: relative;
   height: 100%;
-  z-index: -2;
+  z-index: 0;
 }
 #roadmap::after {
   content: "";
@@ -1222,7 +1293,7 @@ p {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
   background: linear-gradient(360deg, #0b1d33 0%, rgba(11, 29, 51, 0) 97.51%);
   transform: matrix(1, 0, 0, -1, 0, 0);
   opacity: 0.8;
@@ -1280,11 +1351,16 @@ p {
 }
 .roadmap__list {
   display: flex;
-  width: 100%;
+  width: 1571px;
   min-height: 490px;
 }
 .roadmap__list__wrap {
-  width: 1571px;
+  width: 100%;
+  overflow: auto;
+  cursor: pointer;
+}
+.roadmap__list__wrap::-webkit-scrollbar {
+  display: none;
 }
 .roadmap__list__item {
   width: 370px;
@@ -1441,6 +1517,9 @@ p {
 }
 .document-area__content-img {
   width: 58%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1461,6 +1540,9 @@ p {
 .document-area__content-info {
   width: 42%;
   margin-top: 8rem;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateX(100px);
 }
 @media only screen and (max-width: 992px) {
   .document-area__content-info {
@@ -1917,6 +1999,12 @@ footer::after {
   position: relative;
   margin-bottom: 2rem;
 }
+.footer__top__list__item:nth-child(1) {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s linear 0.4s;
+}
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(1) {
     width: 50%;
@@ -1983,6 +2071,10 @@ footer::after {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s linear 0.6s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(2) {
@@ -2003,6 +2095,10 @@ footer::after {
 }
 .footer__top__list__item:nth-child(3) {
   width: 16.67%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s linear 0.8s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(3) {
@@ -2021,6 +2117,10 @@ footer::after {
 }
 .footer__top__list__item:nth-child(4) {
   width: 33.33%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s linear 1s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(4) {
