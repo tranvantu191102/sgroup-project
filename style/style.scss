@@ -16,6 +16,7 @@ body {
   font-family: "Outfit", sans-serif;
   background-color: $bg;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 h1,
@@ -398,23 +399,21 @@ p {
       position: relative;
       & > .toggle {
         position: absolute;
-        top: 2rem;
-        transform: translateY(-50%);
+        top: 0.6rem;
         right: 1.5rem;
         border-radius: 4px;
         width: 3.2rem;
         height: 3.2rem;
         background-color: $blue;
         @include flex(center, center);
+        transform-origin: center;
+        transition: transform 0.3s linear;
         & > i {
           transition: transform 0.3s linear;
         }
 
         &.toggle__clicked {
-          & > i {
-            transform: rotate(90deg);
-            transition: transform 0.3s linear;
-          }
+          transform: rotate(90deg);
         }
 
         & > i {
@@ -422,14 +421,16 @@ p {
           font-size: 1.2rem;
         }
       }
+      &.active .sub__menu {
+        max-height: 8.6rem;
+      }
 
       .sub__menu {
-        transform: scale(1, 0);
-        transform-origin: 0 0;
-        height: 0;
-        visibility: hidden;
-        transition: all 0.5s linear;
+        max-height: 0;
+        overflow: hidden;
         list-style: none;
+        transition: 0.5s linear;
+
         & > li {
           border-top: 1px solid $boder-color;
           cursor: pointer;
@@ -450,6 +451,7 @@ p {
 
     &__item {
       width: 100%;
+      transition: all 0.5s ease;
 
       border-top: 1px solid $boder-color;
       cursor: pointer;
@@ -678,6 +680,11 @@ p {
           margin-bottom: 25px;
           margin-top: 8px;
           position: relative;
+
+          @include subMobile {
+            width: 90%;
+            margin: 1rem auto;
+          }
 
           &__bar {
             position: absolute;
@@ -998,6 +1005,10 @@ p {
         margin: 16px;
         width: 510px;
         @include flexColumn(flex-start, center);
+      }
+
+      @include subMobile {
+        width: calc(100vw - 50px);
       }
 
       &:hover &-icon {
@@ -2197,3 +2208,5 @@ footer {
     }
   }
 }
+
+@import "./style2";

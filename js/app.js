@@ -1,6 +1,9 @@
 const closeMobileMenu = document.querySelector(".mobile__menu__close");
-const mobileMenuToggle = document.querySelector(
+const mobileMenuHomeToggle = document.querySelector(
   ".mobile__menu__home > .toggle"
+);
+const mobileMenuBlogToggle = document.querySelector(
+  ".mobile__menu__blog > .toggle"
 );
 
 const dayTime = document.querySelector(".time-count.day > span:nth-child(1)");
@@ -53,14 +56,35 @@ function handleOpenMobileMenu() {
   mobileMenuBg.classList.add("mobile__menu__bg__visible");
 }
 
-mobileMenuToggle.addEventListener("click", () => {
-  mobileMenuToggle.classList.toggle("toggle__clicked");
-  const toggleClicked = document.querySelector(".toggle__clicked");
-  const subMenu = document.querySelector(".mobile__menu__home > .sub__menu");
+mobileMenuHomeToggle.onclick = function () {
+  mobileMenuHomeToggle.classList.toggle("toggle__clicked");
+  const toggleClicked = document.querySelector(
+    ".mobile__menu__home > .toggle__clicked"
+  );
+  const subMenuHome = document.querySelector(".item__menu.mobile__menu__home");
   if (toggleClicked) {
+    subMenuHome.classList.add("active");
   } else {
+    subMenuHome.classList.remove("active");
   }
-});
+};
+
+mobileMenuBlogToggle.onclick = function () {
+  mobileMenuBlogToggle.classList.toggle("toggle__clicked");
+  const toggleClicked = document.querySelector(
+    ".mobile__menu__blog >.toggle__clicked"
+  );
+  const subMenuBlog = document.querySelector(".item__menu.mobile__menu__blog");
+  if (toggleClicked) {
+    subMenuBlog.classList.add("active");
+  } else {
+    subMenuBlog.classList.remove("active");
+  }
+};
+
+// mobileMenuToggle.addEventListener("click", () => {
+
+// });
 
 function handleScrollTop() {
   window.scrollTo({
@@ -131,7 +155,16 @@ const hideEffectElements = document.querySelectorAll(".hide__effect");
 hideEffectElements.forEach((el) => observer.observe(el));
 // Active Header Navbar
 const sectionIdElements = document.querySelectorAll(".section__id");
-const navigationItems = document.querySelectorAll(".navigation__item");
+let navigationItems = document.querySelectorAll(".navigation__item");
+navigationItems = Array.from(navigationItems);
+let navigationItemsCutted = [];
+navigationItems.map((el, index) => {
+  if (index !== 4) {
+    navigationItemsCutted.push(el);
+  }
+});
+
+console.log(navigationItemsCutted);
 
 const observerSection = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -144,10 +177,9 @@ const observerSection = new IntersectionObserver((entries) => {
       sectionIdElements.forEach((el, subIndex) => {
         if (el === entry.target) {
           index = subIndex;
-          console.log(index);
         }
       });
-      navigationItems[index].classList.add("active");
+      navigationItemsCutted[index].classList.add("active");
     }
   });
 });
