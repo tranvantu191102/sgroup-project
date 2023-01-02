@@ -388,7 +388,7 @@ p {
   max-width: 300px;
   height: 100vh;
   background-color: #0b1d33;
-  z-index: 999;
+  z-index: 99999;
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
@@ -865,7 +865,7 @@ p {
   justify-content: flex-end;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-50px);
 }
 @media only screen and (max-width: 992px) {
   .about__who-we-are__img {
@@ -896,7 +896,7 @@ p {
   margin-left: 55px;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(-50px);
 }
 @media only screen and (max-width: 992px) {
   .about__who-we-are__content {
@@ -1124,7 +1124,7 @@ p {
   width: 50%;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-50px);
 }
 @media only screen and (max-width: 992px) {
   .sales__content__info {
@@ -1200,7 +1200,7 @@ p {
   border-radius: 20px;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(-50px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1564,7 +1564,7 @@ p {
   margin-top: 8rem;
   visibility: hidden;
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(50px);
 }
 @media only screen and (max-width: 992px) {
   .document-area__content-info {
@@ -2024,8 +2024,8 @@ footer::after {
 .footer__top__list__item:nth-child(1) {
   visibility: hidden;
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 0.5s linear 0.4s;
+  transform: translateY(50px);
+  transition: all 0.5s linear 0.1s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(1) {
@@ -2095,8 +2095,8 @@ footer::after {
   justify-content: center;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 0.5s linear 0.6s;
+  transform: translateY(50px);
+  transition: all 0.5s linear 0.3s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(2) {
@@ -2119,8 +2119,8 @@ footer::after {
   width: 16.67%;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 0.5s linear 0.8s;
+  transform: translateY(50px);
+  transition: all 0.5s linear 0.5s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(3) {
@@ -2141,8 +2141,8 @@ footer::after {
   width: 33.33%;
   visibility: hidden;
   opacity: 0;
-  transform: translateY(100px);
-  transition: all 0.5s linear 1s;
+  transform: translateY(50px);
+  transition: all 0.5s linear 0.7s;
 }
 @media only screen and (max-width: 992px) {
   .footer__top__list__item:nth-child(4) {

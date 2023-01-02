@@ -339,7 +339,7 @@ p {
   max-width: 300px;
   height: 100vh;
   background-color: #0b1d33;
-  z-index: 999;
+  z-index: 99999;
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
@@ -842,7 +842,7 @@ p {
       justify-content: flex-end;
       visibility: hidden;
       opacity: 0;
-      transform: translateX(-100px);
+      transform: translateX(-50px);
 
       @include tablet {
         width: 100%;
@@ -875,7 +875,7 @@ p {
       margin-left: 55px;
       visibility: hidden;
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(-50px);
       @include tablet {
         width: 100%;
       }
@@ -1097,7 +1097,7 @@ p {
       width: 50%;
       visibility: hidden;
       opacity: 0;
-      transform: translateX(-100px);
+      transform: translateX(-50px);
 
       @include tablet {
         width: 100%;
@@ -1172,7 +1172,7 @@ p {
       border-radius: 20px;
       visibility: hidden;
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(-50px);
       @include flexColumn(center, center);
 
       @include tablet {
@@ -1553,7 +1553,7 @@ p {
       margin-top: 8rem;
       visibility: hidden;
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateX(50px);
       @include tablet {
         margin: auto;
       }
@@ -2013,8 +2013,8 @@ footer {
         &:nth-child(1) {
           visibility: hidden;
           opacity: 0;
-          transform: translateY(100px);
-          transition: all 0.5s linear 0.4s;
+          transform: translateY(50px);
+          transition: all 0.5s linear 0.1s;
           @include tablet {
             width: 50%;
           }
@@ -2075,8 +2075,8 @@ footer {
           @include flexColumn(center, center);
           visibility: hidden;
           opacity: 0;
-          transform: translateY(100px);
-          transition: all 0.5s linear 0.6s;
+          transform: translateY(50px);
+          transition: all 0.5s linear 0.3s;
           @include tablet {
             width: 50%;
           }
@@ -2094,8 +2094,8 @@ footer {
           width: 16.67%;
           visibility: hidden;
           opacity: 0;
-          transform: translateY(100px);
-          transition: all 0.5s linear 0.8s;
+          transform: translateY(50px);
+          transition: all 0.5s linear 0.5s;
           @include tablet {
             width: 50%;
           }
@@ -2110,8 +2110,8 @@ footer {
           width: 33.33%;
           visibility: hidden;
           opacity: 0;
-          transform: translateY(100px);
-          transition: all 0.5s linear 1s;
+          transform: translateY(50px);
+          transition: all 0.5s linear 0.7s;
           @include tablet {
             width: 50%;
           }
