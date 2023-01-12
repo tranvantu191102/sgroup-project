@@ -4,6 +4,13 @@ const faqListAnswers = document.querySelectorAll(
 const faqListIcons = document.querySelectorAll(
   ".faq-two__list__item__question > .icon"
 );
+const closeMobileMenu = document.querySelector(".mobile__menu__close");
+const mobileMenuHomeToggle = document.querySelector(
+  ".mobile__menu__home > .toggle"
+);
+const mobileMenuBlogToggle = document.querySelector(
+  ".mobile__menu__blog > .toggle"
+);
 const faqListItems = document.querySelectorAll(".faq-two__list__item");
 let indexToggle = null;
 
@@ -49,6 +56,56 @@ function handleShowAnswer(s) {
 
   indexToggle = s;
 }
+
+// Mobile Header
+function handleCloseMobileMenu() {
+  const mobileMenu = document.querySelector(".mobile__menu");
+  const mobileMenuBg = document.querySelector(".mobile__menu__bg");
+  const body = document.querySelector("body");
+
+  closeMobileMenu.style.transform = "rotate(0deg)";
+  body.style.overflowY = "auto";
+  mobileMenu.classList.remove("mobile__menu__visible");
+  mobileMenuBg.classList.remove("mobile__menu__bg__visible");
+}
+
+function handleOpenMobileMenu() {
+  const mobileMenu = document.querySelector(".mobile__menu");
+  const mobileMenuBg = document.querySelector(".mobile__menu__bg");
+  const body = document.querySelector("body");
+  console.log(1);
+
+  closeMobileMenu.style.transform = "rotate(180deg)";
+  body.style.overflowY = "hidden";
+  mobileMenu.classList.add("mobile__menu__visible");
+  mobileMenuBg.classList.add("mobile__menu__bg__visible");
+}
+
+mobileMenuHomeToggle.onclick = function () {
+  mobileMenuHomeToggle.classList.toggle("toggle__clicked");
+  const toggleClicked = document.querySelector(
+    ".mobile__menu__home > .toggle__clicked"
+  );
+  const subMenuHome = document.querySelector(".item__menu.mobile__menu__home");
+  if (toggleClicked) {
+    subMenuHome.classList.add("active");
+  } else {
+    subMenuHome.classList.remove("active");
+  }
+};
+
+mobileMenuBlogToggle.onclick = function () {
+  mobileMenuBlogToggle.classList.toggle("toggle__clicked");
+  const toggleClicked = document.querySelector(
+    ".mobile__menu__blog >.toggle__clicked"
+  );
+  const subMenuBlog = document.querySelector(".item__menu.mobile__menu__blog");
+  if (toggleClicked) {
+    subMenuBlog.classList.add("active");
+  } else {
+    subMenuBlog.classList.remove("active");
+  }
+};
 
 // Active header navigation
 const sectionIdElements = document.querySelectorAll(".section-two__id");
