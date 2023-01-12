@@ -296,6 +296,10 @@ p {
   color: #ffffff;
   font-weight: 500;
   padding: 5px 15px 5px 15px;
+  transition: 0.2s linear;
+}
+.header__content__action__language .language__menu > li:hover {
+  color: #00c4f4;
 }
 .header__content__action__language .language span {
   color: #ffffff;
@@ -2514,6 +2518,10 @@ footer::after {
   color: #ffffff;
   font-weight: 500;
   padding: 5px 15px 5px 15px;
+  transition: 0.2s linear;
+}
+.header-two__content__action__language .language__menu > li:hover {
+  color: #00c4f4;
 }
 .header-two__content__action__language .language span {
   color: #ffffff;
