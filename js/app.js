@@ -21,6 +21,14 @@ const listItemsWrap = document.querySelector(".about__why-choose-us__wrap");
 sliderMouse(listItemsWrap);
 sliderMouse(roadMapListWrap);
 
+// Loading
+function loading() {
+  document.querySelector(".loading").classList.add("active");
+  setTimeout(() => {
+    document.querySelector(".loading").classList.remove("active");
+  }, 2000);
+}
+loading();
 // Scroll Header
 
 window.addEventListener("scroll", () => {

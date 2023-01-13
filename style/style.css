@@ -55,6 +55,97 @@
   transition: all 0.4s linear;
 }
 
+.loading {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #030b15;
+  z-index: 99999999999999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s linear;
+}
+.loading.active {
+  visibility: visible;
+  opacity: 100;
+  pointer-events: visible;
+}
+.loading.active .loading__icon {
+  visibility: visible;
+  opacity: 100;
+  pointer-events: visible;
+}
+.loading__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s linear;
+}
+
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 8px;
+  background: #00c4f4;
+  animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  animation-delay: -0.2s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 18px;
+  animation-delay: -0.14s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 28px;
+  animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(4) {
+  left: 38px;
+  animation-delay: -0.1s;
+}
+
+.lds-facebook div:nth-child(5) {
+  left: 48px;
+  animation-delay: -0.02s;
+}
+
+.lds-facebook div:nth-child(6) {
+  left: 58px;
+  animation-delay: 0s;
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 60px;
+  }
+  50%, 100% {
+    top: 24px;
+    height: 26px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
