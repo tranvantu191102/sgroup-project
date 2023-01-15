@@ -91,67 +91,73 @@
           </nav>
         </div>
         <div class="mobile__menu">
-          <div class="mobile__menu__logo">
-            <a href="./index.html">
-              <img src="./img/logo.png" alt="" />
-            </a>
+          <div class="mobile__menu-wrap">
+            <div class="mobile__menu__logo">
+              <a href="./index.html">
+                <img src="./img/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="mobile__menu__close" onclick="handleCloseMobileMenu()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
+            <ul class="mobile__menu__list">
+              <li
+                class="mobile__menu__list__item item__menu mobile__menu__home"
+              >
+                <a href="#">HOME</a>
+                <ul class="sub__menu">
+                  <li><a href="./index.html">Home One</a></li>
+                  <li><a href="./index-2.html">Home Two</a></li>
+                </ul>
+                <div class="toggle">
+                  <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                </div>
+              </li>
+              <li class="mobile__menu__list__item">
+                <a href="#">about us</a>
+              </li>
+              <li class="mobile__menu__list__item">
+                <a href="#">sales</a>
+              </li>
+              <li class="mobile__menu__list__item">
+                <a href="#">roadmap</a>
+              </li>
+              <li
+                class="mobile__menu__list__item item__menu mobile__menu__blog"
+              >
+                <a href="#">blog</a>
+                <ul class="sub__menu">
+                  <li><a href="#">Our Blog</a></li>
+                  <li><a href="#">Blog Details</a></li>
+                </ul>
+                <div class="toggle">
+                  <i class="fa-sharp fa-solid fa-chevron-down"></i>
+                </div>
+              </li>
+              <li class="mobile__menu__list__item">
+                <a href="#">contact us</a>
+              </li>
+            </ul>
+            <ul class="mobile__menu__social">
+              <li class="mobile__menu__social__item">
+                <i class="fa-brands fa-facebook-f"></i>
+              </li>
+              <li class="mobile__menu__social__item">
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <li class="mobile__menu__social__item">
+                <i class="fa-brands fa-instagram"></i>
+              </li>
+              <li class="mobile__menu__social__item">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </li>
+              <li class="mobile__menu__social__item">
+                <i class="fa-brands fa-youtube"></i>
+              </li>
+            </ul>
           </div>
-          <div class="mobile__menu__close" onclick="handleCloseMobileMenu()">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <ul class="mobile__menu__list">
-            <li class="mobile__menu__list__item item__menu mobile__menu__home">
-              <a href="#">HOME</a>
-              <ul class="sub__menu">
-                <li><a href="./index.html">Home One</a></li>
-                <li><a href="./index-2.html">Home Two</a></li>
-              </ul>
-              <div class="toggle">
-                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-              </div>
-            </li>
-            <li class="mobile__menu__list__item">
-              <a href="#">about us</a>
-            </li>
-            <li class="mobile__menu__list__item">
-              <a href="#">sales</a>
-            </li>
-            <li class="mobile__menu__list__item">
-              <a href="#">roadmap</a>
-            </li>
-            <li class="mobile__menu__list__item item__menu mobile__menu__blog">
-              <a href="#">blog</a>
-              <ul class="sub__menu">
-                <li><a href="#">Our Blog</a></li>
-                <li><a href="#">Blog Details</a></li>
-              </ul>
-              <div class="toggle">
-                <i class="fa-sharp fa-solid fa-chevron-down"></i>
-              </div>
-            </li>
-            <li class="mobile__menu__list__item">
-              <a href="#">contact us</a>
-            </li>
-          </ul>
-          <ul class="mobile__menu__social">
-            <li class="mobile__menu__social__item">
-              <i class="fa-brands fa-facebook-f"></i>
-            </li>
-            <li class="mobile__menu__social__item">
-              <i class="fa-brands fa-twitter"></i>
-            </li>
-            <li class="mobile__menu__social__item">
-              <i class="fa-brands fa-instagram"></i>
-            </li>
-            <li class="mobile__menu__social__item">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </li>
-            <li class="mobile__menu__social__item">
-              <i class="fa-brands fa-youtube"></i>
-            </li>
-          </ul>
         </div>
-        <div class="mobile__menu__bg"></div>
+        <div class="mobile__menu__bg" onclick="handleCloseMobileMenu()"></div>
       </header>
       <div class="main">
         <section class="banner-wrap section__id" id="banner ">
@@ -386,8 +392,10 @@
               <div class="sales__content__info hide__effect">
                 <div class="info-wrap">
                   <div class="sales__content__info__nav">
-                    <button class="funding">FUNDING ALLOCATION</button>
-                    <button class="token">TOKEN ALLOCATION</button>
+                    <button class="funding">
+                      <span>FUNDING ALLOCATION</span>
+                    </button>
+                    <button class="token"><span>TOKEN ALLOCATION</span></button>
                   </div>
                   <h2 class="sales__content__info__convert">
                     1 CNL = 0.0863 BTC

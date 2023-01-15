@@ -487,6 +487,7 @@ p {
   width: 100%;
   max-width: 300px;
   height: 100vh;
+  overflow-y: auto;
   background-color: #0b1d33;
   z-index: 99999999;
   overflow: hidden;
@@ -494,6 +495,11 @@ p {
   opacity: 0;
   transform: translateX(300px);
   transition: all 0.3s linear;
+}
+.mobile__menu-wrap {
+  overflow-y: auto;
+  position: relative;
+  height: 100vh;
 }
 .mobile__menu__visible {
   visibility: visible;
@@ -1099,6 +1105,7 @@ p {
   cursor: pointer;
   scroll-behavior: smooth;
   scroll-snap-type: both;
+  transition: 0.2s linear;
 }
 .about__why-choose-us__wrap::-webkit-scrollbar {
   display: none;
@@ -1109,6 +1116,7 @@ p {
   justify-content: center;
   width: max-content;
   margin-top: 2rem;
+  scroll-behavior: smooth;
 }
 .about__why-choose-us__item {
   padding: 5rem 3.5rem;
@@ -1120,6 +1128,7 @@ p {
   cursor: pointer;
   min-height: 342px;
   scroll-snap-align: start;
+  transition: 0.2s linear;
 }
 @media only screen and (min-width: 1250px) {
   .about__why-choose-us__item {
@@ -1245,15 +1254,37 @@ p {
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 3rem;
-  flex-wrap: wrap;
+}
+@media only screen and (max-width: 992px) {
+  .sales__content__info__nav {
+    flex-wrap: wrap;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .sales__content__info__nav .token {
+    padding: 0;
+    margin-top: 4px;
+  }
+}
+.sales__content__info__nav .funding > span {
+  position: relative;
+}
+.sales__content__info__nav .funding > span::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #00c4f4;
 }
 @media only screen and (max-width: 576px) {
   .sales__content__info__nav {
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
 .sales__content__info__nav > button {
-  padding: 0 20px;
   font-size: 1.5rem;
   text-transform: uppercase;
   color: #ffffff;

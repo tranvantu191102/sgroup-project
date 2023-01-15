@@ -24,9 +24,9 @@ sliderMouse(roadMapListWrap);
 // Loading
 function loading() {
   document.querySelector(".loading").classList.add("active");
-  setTimeout(() => {
+  window.addEventListener("load", () => {
     document.querySelector(".loading").classList.remove("active");
-  }, 2000);
+  });
 }
 loading();
 // Scroll Header
@@ -125,6 +125,50 @@ const timer = setInterval(() => {
 
 // Slider
 
+// function slider(){
+//   let isMouseDown = false;
+//   let startPoint = 0;
+//   let scrollLeft;
+//   slider.addEventListener("mousedown", (e) => {
+//     isMouseDown = !isMouseDown;
+//     startPoint = e.pageX - slider.offsetLeft;
+//     scrollLeft = slider.scrollLeft;
+//   });
+//   slider.addEventListener("mouseup", (e) => {
+//     isMouseDown = false;
+//   });
+
+//   slider.addEventListener("mousemove", (e) => {
+//     if (!isMouseDown) return;
+//     e.preventDefault();
+//     const x = e.pageX - slider.offsetLeft;
+//     const walk = (x - startPoint) * 2;
+//     slider.scrollLeft = scrollLeft - walk;
+//   });
+// }
+
+// setInterval(() => {
+//   const slideItems = document.querySelectorAll(".about__why-choose-us__item");
+//   const slideList = document.querySelector(".about__why-choose-us__list");
+
+//   // listItemsWrap.scrollLeft = slideItems[0].offsetWidth;
+//   // listItemsWrap.scrollTo({
+//   //   top: 0,
+//   //   left: slideItems[0].offsetWidth,
+//   //   behavior: "smooth",
+//   // });
+
+//   slideItems.forEach((item) => {
+//     item.style.transform = `translateX(-${item.offsetWidth - 10}px)`;
+//     item.style.transition = `0.5s linear`;
+//   });
+//   slideList.appendChild(slideItems[0]);
+//   slideItems.forEach((item) => {
+//     item.style.transform = `translateX(0)`;
+//     item.style.transition = `0.5s linear`;
+//   });
+// }, 2000);
+
 function sliderMouse(slider) {
   let isMouseDown = false;
   let startPoint = 0;
@@ -171,8 +215,6 @@ navigationItems.map((el, index) => {
     navigationItemsCutted.push(el);
   }
 });
-
-console.log(navigationItemsCutted);
 
 const observerSection = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
